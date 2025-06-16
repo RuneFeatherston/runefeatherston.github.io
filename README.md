@@ -28,8 +28,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Added a visually styled featured project section
 - Created a separate page (`waph.html`) introducing the WAPH course and my related work
 
-**Fit Criterion Met:** All content required for a professional profile is present and formatted cleanly.
-
 ---
 
 ### 2. WAPH Course Link Page
@@ -39,8 +37,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Included internal link navigation and return-to-home functionality
 - I want to note, I put all of the clocks and API related stuff in the waph.html instead of index.html so that the main page looks cleaner. This is hopefully so that employers have a more positive view on it.
 
-**Fit Criterion Met:** Clear project linkage.
-
 ---
 
 ### 3. Styling and Layout with CSS Framework
@@ -48,8 +44,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Used **Bootstrap 5.3.0** for layout and responsiveness
 - Customized typography using **Google Fonts (Poppins)**
 - Applied additional custom styles for hover effects, dark mode toggle, and responsive scaling
-
-**Fit Criterion Met:** Open-source styling used; design is modern and visually consistent.
 
 ---
 
@@ -71,8 +65,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Allows switching between dark and light modes
 - Persisted across session
 
-**Fit Criterion Met:** All required functions plus one custom addition included and functional.
-
 ---
 
 ### 5. Public API Integration
@@ -87,8 +79,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Uses CORS proxy for API compatibility
 - Error-resilient and styled for readability
 
-**Fit Criterion Met:** Two APIs integrated with dynamic content and responsible handling.
-
 ---
 
 ### 6. JavaScript Cookies
@@ -98,7 +88,6 @@ This project involved building a professional portfolio website hosted on GitHub
 - Stored using custom `setCookie()`/`getCookie()` functions
 - Message dynamically rendered on homepage
 
-**Fit Criterion Met:** Cookie-based tracking implemented with correct conditional behavior.
 
 ---
 
@@ -106,8 +95,6 @@ This project involved building a professional portfolio website hosted on GitHub
 
 - Used **FlagCounter** for visual country-based analytics
 - Also included Google Analytics snippet for detailed tracking (placeholder ID)
-
-**Fit Criterion Met:** Third-party tracking tools are active and visible.
 
 ---
 
@@ -118,18 +105,6 @@ With this lab, I gained hands-on experience with JavaScript timers, DOM updates,
 - Practiced full-stack development within a constrained, deadline-driven project
 - Developed clearer documentation and project structure habits
 - Explored how to package technical work for public, employer-facing presentation
-
----
-
-## Challenges and Solutions
-
-| Challenge | Solution |
-|----------|----------|
-| CORS restrictions with XKCD API | Used AllOrigins proxy |
-| Synchronizing analog + digital clocks | Derived angle math and synced intervals |
-| Cookie persistence between sessions | Set expiration and updated time formatting |
-| API failure resilience | Added graceful fallback UI messages |
-| Balancing aesthetics with functionality | Modularized features and styled consistently |
 
 ---
 
