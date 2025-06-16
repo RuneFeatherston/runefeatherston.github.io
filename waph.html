@@ -1,12 +1,572 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WAPH Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAPH Course - Web Application Programming and Hacking</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0d4b1a 0%, #2d5016 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .clock-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .digital-clock {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0d4b1a;
+            margin-bottom: 10px;
+        }
+        
+        .analog-clock {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #0d4b1a;
+            border-radius: 50%;
+            position: relative;
+            margin: 20px auto;
+            background: white;
+        }
+        
+        .clock-hand {
+            position: absolute;
+            background: #333;
+            transform-origin: bottom center;
+            border-radius: 10px;
+        }
+        
+        .hour-hand {
+            width: 4px;
+            height: 60px;
+            top: 40px;
+            left: 98px;
+        }
+        
+        .minute-hand {
+            width: 2px;
+            height: 80px;
+            top: 20px;
+            left: 99px;
+        }
+        
+        .second-hand {
+            width: 1px;
+            height: 90px;
+            top: 10px;
+            left: 99.5px;
+            background: red;
+        }
+        
+        .clock-center {
+            width: 10px;
+            height: 10px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 95px;
+            left: 95px;
+            z-index: 10;
+        }
+        
+        .joke-container {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .comic-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .lab-card {
+            border-left: 4px solid #667eea;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .progress-bar-animated {
+            animation: progress-bar-stripes 1s linear infinite;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+    </style>
 </head>
 <body>
-  <h1>Web Application Programming and Hacking</h1>
-  <p>This page will include details of my hands-on labs and hackathons.</p>
-  <a href="index.html">Back to Homepage</a>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1><i class="fas fa-shield-alt"></i> Web Application Programming and Hacking</h1>
+                    <p class="lead">WAPH Course - University of Cincinnati</p>
+                    <p>Exploring the intersection of web development and cybersecurity</p>
+                    <a href="index.html" class="btn btn-outline-light">
+                        <i class="fas fa-home"></i> Back to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-5">Course Overview</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4><i class="fas fa-bullseye"></i> Course Objectives</h4>
+                    <p>The Web Application Programming and Hacking (WAPH) course provides comprehensive training in:</p>
+                    <ul>
+                        <li>Modern web development technologies and frameworks</li>
+                        <li>Web application security vulnerabilities and threats</li>
+                        <li>Ethical hacking techniques for web applications</li>
+                        <li>Secure coding practices and defensive programming</li>
+                        <li>Penetration testing methodologies</li>
+                        <li>Security assessment and vulnerability analysis</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4><i class="fas fa-cogs"></i> Technologies Covered</h4>
+                    <div class="mb-3">
+                        <label>JavaScript & Frontend Frameworks</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 95%">95%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Web Security Concepts</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 90%">90%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Penetration Testing Tools</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 85%">85%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Secure Development Practices</label>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: 88%">88%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Timeline -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-5">Course Timeline</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>Foundations of the Web</h5>
+                            <p>HTTP protocol, web servers, CGI programming, and fundamental web communication concepts</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Front-end Web Development</h5>
+                            <p>HTML5, CSS3, JavaScript, jQuery, AJAX, and modern frontend frameworks</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Front-end Web Security</h5>
+                            <p>Client-side vulnerabilities, XSS attacks, CSRF protection, and secure coding practices</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Secure Back-end Web Application Development in PHP/MySQL</h5>
+                            <p>Server-side programming, database integration, and secure application architecture</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Secure Session Management and Authentication</h5>
+                            <p>User authentication systems, session handling, and access control mechanisms</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Secure Database Manipulation in Web Applications</h5>
+                            <p>SQL injection prevention, database security, and safe data handling practices</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Advanced Topics in Web Applications</h5>
+                            <p>Emerging security threats, advanced attack vectors, and cutting-edge defense strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hands-on Labs -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-5">Hands-on Labs</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card lab-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-cog"></i> Lab 0: Development Environment Setup</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>I configured my development environment by creating a private GitHub repository and setting up secure SSH authentication for version control. Instead of using a traditional virtual machine, I used WSL2 with Ubuntu 22.04 for lightweight Linux compatibility on Windows. I installed required packages like Apache2, Git, and Sublime, verified the Apache server through localhost access, and committed a templated README with a bio and headshot. This setup provided the foundation for all future labs and projects in the course.</p>
+                            <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card lab-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-globe"></i> Lab 1: Foundations of the Web</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>I explored the structure of HTTP through packet inspection with Wireshark, using curl and telnet to manually send HTTP requests and analyze browser versus raw request headers. I developed server-side applications using both C (CGI) and PHP, including a basic hello-world and an echo script to reflect user input. I compared GET vs POST request behaviors in both structure and security, identifying potential vulnerabilities like XSS and noting proper sanitization techniques such as htmlspecialchars().</p>
+                            <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card lab-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-code"></i> Lab 2: Front-End Web Development</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>I implemented a complete front-end webpage integrating HTML, JavaScript, CSS, Ajax, jQuery, and Web API calls. Key features included a digital and analog clock using real-time DOM manipulation, email toggling logic, and keypress logging. I demonstrated secure Ajax communications with PHP using both raw JavaScript and jQuery methods, and incorporated external APIs such as JokeAPI and Agify to display dynamic, real-world data. Styling was applied using inline, internal, and external CSS (including W3.CSS) for responsive UI behavior.</p>
+                            <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card lab-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-shield-alt"></i> Hackathon 1: XSS Vulnerability Exploration</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>I tested and exploited multiple levels of Cross-Site Scripting (XSS) vulnerabilities, starting from unsanitized inputs and progressing to regex-based and blacklist-filtered PHP backends. I crafted JavaScript payloads using various injection strategies including &lt;script&gt; tags, DOM-breaking payloads, and onerror image hooks. For each level, I inferred backend logic and demonstrated bypasses, culminating in a secure endpoint using htmlentities() for proper output encoding. This hackathon reinforced both offensive and defensive XSS techniques.</p>
+                            <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Developed -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-5">Skills Developed</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <h4>Web Development</h4>
+                        <p>Proficiency in modern web technologies including HTML5, CSS3, JavaScript, and popular frameworks like Bootstrap and jQuery.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                        <h4>Cybersecurity</h4>
+                        <p>Understanding of web application vulnerabilities, penetration testing methodologies, and defensive security measures.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-brain fa-3x text-warning mb-3"></i>
+                        <h4>Problem Solving</h4>
+                        <p>Enhanced analytical thinking and problem-solving skills through hands-on labs and security challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Corner -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Fun Corner</h2>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="clock-container">
+                        <h4>Digital Clock</h4>
+                        <div class="digital-clock" id="digital-clock"></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="clock-container">
+                        <h4>Analog Clock</h4>
+                        <div class="analog-clock">
+                            <div class="clock-hand hour-hand" id="hour-hand"></div>
+                            <div class="clock-hand minute-hand" id="minute-hand"></div>
+                            <div class="clock-hand second-hand" id="second-hand"></div>
+                            <div class="clock-center"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="joke-container">
+                        <h4><i class="fas fa-laugh"></i> Daily Joke</h4>
+                        <div id="joke-content">Loading joke...</div>
+                        <small class="text-muted">*Joke generated by JokeAPI - third-party content</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="comic-container">
+                        <h4><i class="fas fa-image"></i> XKCD Comic</h4>
+                        <div id="xkcd-content">Loading comic...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; 2025 Rune Featherston - WAPH Course Portfolio</p>
+                    <p>University of Cincinnati | Web Application Programming and Hacking</p>
+                    <div class="mt-3">
+                        <a href="index.html" class="btn btn-outline-light me-2">
+                            <i class="fas fa-home"></i> Back to Homepage
+                        </a>
+                        <a href="https://github.com/RuneFeatherston" target="_blank" class="btn btn-outline-light">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize clock and APIs
+            updateDigitalClock();
+            updateAnalogClock();
+            fetchJoke();
+            fetchXKCD();
+            
+            // Set up intervals
+            setInterval(updateDigitalClock, 1000);
+            setInterval(updateAnalogClock, 1000);
+            setInterval(fetchJoke, 60000); // Fetch new joke every minute
+            
+            // Animate progress bars when they come into view
+            $(window).scroll(function() {
+                $('.progress-bar').each(function() {
+                    const bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                    const bottom_of_window = $(window).scrollTop() + $(window).height();
+                    
+                    if (bottom_of_window > bottom_of_element) {
+                        $(this).addClass('progress-bar-animated');
+                    }
+                });
+            });
+
+            // Card hover effects
+            $('.card').hover(
+                function() {
+                    $(this).addClass('shadow-lg');
+                },
+                function() {
+                    $(this).removeClass('shadow-lg');
+                }
+            );
+
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+
+        // Clock Functions
+        function updateDigitalClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            $('#digital-clock').text(timeString);
+        }
+
+        function updateAnalogClock() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours() % 12;
+
+            const secondAngle = (seconds * 6) - 90; // 360/60 = 6 degrees per second
+            const minuteAngle = (minutes * 6) - 90; // 360/60 = 6 degrees per minute
+            const hourAngle = (hours * 30) + (minutes * 0.5) - 90; // 360/12 = 30 degrees per hour
+
+            $('#second-hand').css('transform', `rotate(${secondAngle}deg)`);
+            $('#minute-hand').css('transform', `rotate(${minuteAngle}deg)`);
+            $('#hour-hand').css('transform', `rotate(${hourAngle}deg)`);
+        }
+
+        // Joke API Integration
+        function fetchJoke() {
+            $.ajax({
+                url: 'https://v2.jokeapi.dev/joke/Any?safe-mode',
+                method: 'GET',
+                success: function(data) {
+                    let jokeText = '';
+                    if (data.type === 'single') {
+                        jokeText = data.joke;
+                    } else {
+                        jokeText = `<strong>Q:</strong> ${data.setup}<br><strong>A:</strong> ${data.delivery}`;
+                    }
+                    $('#joke-content').html(jokeText);
+                },
+                error: function() {
+                    $('#joke-content').html('Sorry, could not load joke at this time.');
+                }
+            });
+        }
+
+        // XKCD API Integration
+        function fetchXKCD() {
+            // Using CORS proxy for XKCD API
+            $.ajax({
+                url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://xkcd.com/info.0.json'),
+                method: 'GET',
+                success: function(data) {
+                    const comic = JSON.parse(data.contents);
+                    $('#xkcd-content').html(`
+                        <h6>${comic.title}</h6>
+                        <img src="${comic.img}" alt="${comic.alt}" class="img-fluid" style="max-width: 300px;">
+                        <p class="mt-2"><small>${comic.alt}</small></p>
+                    `);
+                },
+                error: function() {
+                    $('#xkcd-content').html('Sorry, could not load comic at this time.');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

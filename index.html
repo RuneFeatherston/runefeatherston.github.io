@@ -1,12 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rune Featherston - Professional Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0d4b1a 0%, #2d5016 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to My Professional Homepage</h1>
-  <p>This page will include my resume, skills, and projects.</p>
-  <a href="waph.html">Web Application Programming and Hacking</a>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="image.png" alt="Rune Featherston" class="profile-img">
+                    <h1>Rune Featherston</h1>
+                    <p class="lead">Web Developer & Security Enthusiast</p>
+                    <div class="mt-3">
+                        <button class="btn btn-custom me-2" onclick="showEmail()">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </button>
+                    </div>
+                    <div id="email-display" class="mt-3 hidden">
+                        <p><strong>Email:</strong> <span id="email-text">rune.featherston@example.com</span></p>
+                        <button class="btn btn-sm btn-outline-light" onclick="hideEmail()">Hide Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Message -->
+    <div class="container mt-4">
+        <div class="alert alert-info" id="welcome-message"></div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About Me</h2>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-8 offset-md-2">
+                    <p class="lead text-center">I'm a Computer Engineering student with a focus on semiconductor devices and emerging hardware technologies. I currently work in the Yeongin Kim research group, where I explore the boundary between materials and computation.</p>
+                    
+                    <p class="text-center">Outside the lab, I'm learning Mandarin and split my time between Cincinnati and Taiwan. I'm especially interested in how language, systems, and physical infrastructure shape how we interact with the world.</p>
+                    
+                    <div class="text-center mt-4">
+                        <h4>Contact Information</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-envelope"></i> rune.featherston@example.com</li>
+                            <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Cincinnati, OH</li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/RuneFeatherston" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Featured Project</h2>
+                    <p class="lead">Web Application Programming and Hacking Course Work</p>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body text-center p-5">
+                            <i class="fas fa-shield-alt fa-3x text-success mb-4"></i>
+                            <h4 class="card-title">WAPH Course Projects</h4>
+                            <p class="card-text">Comprehensive collection of web application security projects covering frontend development, security vulnerabilities, penetration testing, and secure coding practices. Includes hands-on labs, hackathons, and real-world security implementations.</p>
+                            <div class="mt-4">
+                                <a href="waph.html" class="btn btn-custom btn-lg">
+                                    <i class="fas fa-arrow-right"></i> Explore Projects
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Resume Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Resume</h2>
+                    <p class="lead">Click to download my resume!</p>
+                    <div class="mt-4">
+                        <a href="resume.pdf" class="btn btn-custom me-2" target="_blank">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; 2025 Rune Featherston. All rights reserved.</p>
+                    <p>
+                        <a href="https://github.com/RuneFeatherston" target="_blank" class="text-white me-3">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/runefeatherston" target="_blank" class="text-white me-3">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:rune.featherston@gmail.com" class="text-white">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </p>
+                    <!-- Page Tracker -->
+                    <div class="mt-3">
+                        <a href="https://www.flagcounter.com/more/h9yF">
+                            <img src="https://s11.flagcounter.com/count2/h9yF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Moment.js for date/time handling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </body>
 </html>
